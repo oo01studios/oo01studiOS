@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>oo01studiOS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+    body {
+      background: linear-gradient(135deg, #0f172a, #020617);
+      color: white; height: 100vh; display: flex; flex-direction: column; overflow: hidden;
+    }
+
+    header { display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; }
+    header h1 {
+      font-size: 22px; font-weight: 700;
+      background: linear-gradient(90deg,#fa32be,#4750ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    nav a { margin-left: 20px; text-decoration: none; color: #cbd5f5; cursor: pointer; }
+    nav a:hover { color: #38bdf8; }
+
+    .main { flex: 1; display: flex; justify-content: center; align-items: center; text-align: center; padding: 10px; }
+
+    .view { display: none; width: 100%; }
+    .active { display: block; }
+
+    .hero h2 {
+      font-size: 70px; font-family: 'Orbitron';
+      background: linear-gradient(90deg,#38bdf8,#9333ea);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p { margin-top: 10px; font-size: 15px; color: #94a3b8; max-width: 500px; margin-inline: auto; }
+
+    .hero button {
+      margin-top: 15px; padding: 10px 25px; border-radius: 25px; background: #38bdf8;
+      border: none; font-weight: 600; cursor: pointer;
+    }
+
+    .sections { display: flex; justify-content: center; gap: 20px; margin-top: 20px; flex-wrap: wrap; }
+
+    .card {
+      background: #020617; padding: 15px; border-radius: 15px; width: 200px;
+      border: 1px solid #1e293b; cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: #38bdf8;
+      box-shadow: 0 0 15px rgba(56,189,248,0.3);
+    }
+
+    .stats {
+      display: flex; justify-content: center; gap: 25px; margin-top: 25px;
+    }
+
+    .stat-box {
+      background: #020617;
+      padding: 10px 15px;
+      border-radius: 10px;
+      border: 1px solid #1e293b;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+
+    .highlight {
+      color: #38bdf8;
+      font-weight: 600;
+    }
+
+    .content-box {
+      max-width: 650px;
+      margin: 20px auto;
+      color: #cbd5f5;
+      line-height: 1.6;
+      font-size: 20px;
+    }
+    .content-box2{
+        max-width: 650px;
+      margin: 20px auto;
+      color: #cbd5f5;
+      line-height: 1.6;
+      font-size: 20px;
+      text-align: left;
+    }
+
+    footer { text-align: center; padding: 10px; font-size: 12px; color: #64748b; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>oo01studiOS</h1>
+  <nav>
+    <a onclick="switchView('home')">Home</a>
+    <a onclick="switchView('projects')">Projects</a>
+    <a onclick="switchView('about')">About</a>
+    <a onclick="switchView('contact')">Contact</a>
+
+  </nav>
+</header>
+
+<div class="main">
+
+  <!-- HOME -->
+  <div id="home" class="view active">
+    <div class="hero">
+      <h2>oo01studiOS</h2>
+      <p>The core lab where ideas evolve into real systems.</p>
+      <button onclick="switchView('projects')">ENTER LAB</button>
+    </div>
+
+    <div class="stats">
+      <div class="stat-box">Projects <span class="highlight">3</span></div>
+      <div class="stat-box">Status <span class="highlight">Active</span></div>
+      <div class="stat-box">Focus <span class="highlight">Innovation</span></div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div id="projects" class="view">
+    <div class="hero">
+      <h2>Creations</h2>
+      <p>Active systems built under oo01studiOS.</p>
+    </div>
+
+    <div class="sections">
+      <div class="card" onclick="ascendix()">
+        <h3>AscendiX</h3>
+        <p>Consistency based learning arena.</p>
+      </div>
+
+      <div class="card" onclick="openProject('Robotics')">
+        <h3>Robotics</h3>
+        <p>Automation experiments.</p>
+      </div>
+
+      <div class="card" onclick="openProject('Web Projects')">
+        <h3>Web Systems</h3>
+        <p>Interactive builds.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div id="about" class="view">
+    <div class="hero">
+      <h2>About</h2>
+    </div>
+
+    <div class="content-box">
+      <p>
+        oo01studiOS is not just a collection of projects. It is a system where learning,
+        building, and experimentation happen continuously.
+      </p>
+
+      <p style="margin-top:10px;">
+        The focus is on creating meaningful tools, improving skills, and pushing limits step by step.
+      </p>
+    </div>
+  </div>
+  <!-- contact-->
+   <div id="contact" class="view">
+    <div class="hero">
+      <h2>Contact</h2>
+    </div>
+<br><br>
+    <div class="content-box">
+      <p>
+        <span style="color:#38bdf8">Email :</span>    rameshvanitha407@gmail.com<br><br>
+        <span style="color:#38bdf8">Instagram :</span> prithviraj_oo01<br><br>
+        <span style="color:#38bdf8">Phone :</span> +91 9360016613
+
+      </p>
+
+     
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 oo01studiOS</p>
+</footer>
+
+<script>
+  function switchView(viewId) {
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+    document.getElementById(viewId).classList.add('active');
+  }
+
+  function openProject(name) {
+    alert(name + " page coming soon ⚔️");
+  }
+  function ascendix() {
+    window.location.href = "AscendiX.html";
+}
+</script>
+
+</body>
+</html>
